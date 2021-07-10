@@ -15,12 +15,13 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-
+import ExposurePlus1Icon from '@material-ui/icons/ExposurePlus1';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     height:"auto",
-    marginBottom:"50px"
+    marginBottom:"10px"
   },
   media: {
     height: 0
@@ -37,16 +38,38 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     backgroundColor: red[500]
+  },
+  icon_style1:{
+    fontSize:25,
+    marginLeft:50,
+    color:"gray"
+  },
+  icon_style2:{
+    fontSize:25,
+    marginLeft:50,
+    color:"red"
   }
 }));
 
 export default function RecipeReviewCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const [count, setCount] = React.useState(0);
+  const [is, setIs] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const incc = () =>{
+    setCount(count+1);
+    setIs(true);
+  }
+
+  const decc = () =>{
+    setCount(count-1);
+    setIs(false);
+  }
 
   return (
     <Card className={classes.root} elevation="0">
@@ -74,6 +97,19 @@ export default function RecipeReviewCard(props) {
           mussels, if you like.
         </Typography>
       </CardContent>
+      <div style={{
+        display:"flex",
+        alignItems:"center",
+        marginTop:-5,
+        borderWidth:1,
+      }}
+      onClick={is?decc:incc}
+      >
+
+      <ThumbUpIcon className={is?classes.icon_style2:classes.icon_style1} /> 
+      <h4 style={{marginLeft:5}}>Support</h4>
+      </div>
+     
     </Card>
   );
 }
