@@ -37,11 +37,12 @@ tr {
   color: white;
   padding: 10px 0px 0px;
 }
-#sidebar-item-list {
+.sidebar-item-list {
   max-height: 250px;
   margin-top: 10px;
   overflow-y: scroll;
-  margin-left:10px;
+  transition-timing-function: 3s linear;
+  margin-left: 10px;
 }
 #sidebar-container-item-list {
   height: 110vh;
@@ -55,21 +56,21 @@ tr {
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.15);
 }
-#sidebar-item-list::-webkit-scrollbar {
+.sidebar-item-list::-webkit-scrollbar {
   width: 10px;
   height: 100px;
 }
-#sidebar-item-list::-webkit-scrollbar-thumb {
+.sidebar-item-list::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.2);
 }
 .profile-dept {
-  font-size: 12px;
+  font-size: 14px;
   color: #f0f0f0;
   font-weight: 600;
   margin-top: 3px;
   margin-left: 2px;
 }
 .dept-sidebar {
-  margin-left: 10px;
+  margin-left: 5px;
 }
