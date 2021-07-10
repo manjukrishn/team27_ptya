@@ -1,16 +1,51 @@
 #home {
   color: black;
-  margin-top:20px;
+  margin-top: 20px;
   padding-left: 250px;
   height: 100vh;
+  /* margin-bottom:200px; */
 }
-.home-heading{
-  margin-left:20px;
+.home-heading {
+  margin-left: 20px;
+  height: 30px;
 }
-.home-subheading{
-  margin-left:20px;
+.home-subheading {
+  margin-left: 20px;
+  font-size: 14px;
+  height: 20px;
+}
+.add-issue {
+  font-weight: 660;
+  padding-left: 17px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  width: 105px;
+  cursor: pointer;
+  color: #383838;
+}
+.add-issue:hover {
+  background-color: #e0e0e0;
+  color: #202020;
 }
 .hr-home {
   border: 0.5px solid #606060;
-  margin-top:13px;
+  margin-top: 10px;
+}
+.home-container {
+  height: 90%;
+  width: 100%;
+  overflow: auto;
+}
+.home-container::-webkit-scrollbar {
+  width: 10px;
+  height: 100px;
+}
+.home-container::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.15);
+}
+.write-issue {
+  height: 50%;
+  overflow: auto;
 }
