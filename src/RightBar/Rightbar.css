@@ -5,7 +5,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 200px;
+  width: 250px;
   background-color: #351f39;
   z-index: 1;
   height: 100vh;
@@ -17,16 +17,17 @@
 .avatar {
   width: 100px;
   height: 100px;
-  margin-top: 50px;
+  margin-top: 120px;
+  margin-left: 50px;
 }
 .inside-container {
   display: flex;
   flex-direction: column;
 }
 .text-right {
-  margin-top: 10px;
+  margin-top: 50px;
+  margin-left: 10px;
 }
 .text-right1 {
   margin-top: 10px;
-  padding-left: 29px;
 }

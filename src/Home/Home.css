@@ -1,7 +1,7 @@
 #home {
   color: black;
   margin-top: 20px;
-  padding-left: 250px;
+  padding-left: 280px;
   height: 100vh;
   /* margin-bottom:200px; */
 }
@@ -20,22 +20,21 @@
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 10px;
-  width: 105px;
+  width: 115px;
   cursor: pointer;
-  color: #383838;
-}
-.add-issue:hover {
-  background-color: #e0e0e0;
-  color: #202020;
+  color: white;
+  background-color: #ce1212;
+  opacity: 0.5;
 }
 .hr-home {
   border: 0.5px solid #606060;
   margin-top: 10px;
 }
 .home-container {
-  height: 90%;
-  width: 100%;
+  height: 85%;
+  width: 75%;
   overflow: auto;
+  margin-left:5px;
 }
 .home-container::-webkit-scrollbar {
   width: 10px;
