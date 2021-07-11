@@ -22,14 +22,14 @@ export default function CustomizedSelects() {
   return (
     <div style={{paddingTop:"10px"}}>
       <FormControl variant="outlined" className={classes.margin}>
-        <InputLabel htmlFor="filled-age-native-simple" style={{marginTop:"5px"}}>Age</InputLabel>
+        <InputLabel htmlFor="filled-age-native-simple" style={{marginTop:"5px"}}>Department</InputLabel>
         <Select value={age} onChange={handleChange}>
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={10}>Agriculture</MenuItem>
+          <MenuItem value={20}>Health</MenuItem>
+          <MenuItem value={30}>Revenue</MenuItem>
         </Select>
       </FormControl>
     </div>

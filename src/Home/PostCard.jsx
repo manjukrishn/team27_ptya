@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     marginBottom: "10px",
     backgroundColor: "#F8F8F8",
-    borderRadius:"25px"
+    borderRadius: "25px"
   },
   media: {
     height: 0
@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
 export default function RecipeReviewCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = React.useState(props.item.support);
   const [is, setIs] = React.useState(false);
 
   const incc = () => {
@@ -100,24 +100,15 @@ export default function RecipeReviewCard(props) {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            {props.item}
+            {props.item.user}
           </Avatar>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      />
-      <CardMedia
-        className={classes.media}
-        image="/static/images/cards/paella.jpg"
-        title="Paella dish"
+        title={props.item.user}
+        subheader={props.item.date}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like. This impressive paella is a perfect party dish
-          and a fun meal to cook together with your guests. Add 1 cup of frozen
-          peas along with the mussels, if you like.
+          {props.item.description}
         </Typography>
       </CardContent>
       <div

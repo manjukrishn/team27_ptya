@@ -1,5 +1,6 @@
 import firebase from "firebase";
 import React from "react";
+import AddData from './AddData';
 import GitHubIcon from "@material-ui/icons/GitHub";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import Button from "@material-ui/core/Button";
@@ -24,7 +25,7 @@ export default function Ui() {
           localStorage.setItem("email", res.user.email);
           localStorage.setItem("uid", res.user.uid);
           localStorage.setItem("logged", true);
-          // AddData(res.user);
+          AddData(res.user);
           history.push("/agriculture");
         }
       })
@@ -39,7 +40,7 @@ export default function Ui() {
           localStorage.setItem("email", res.user.email);
           localStorage.setItem("uid", res.user.uid);
           localStorage.setItem("logged", true);
-          // AddData(res.user);
+          AddData(res.user);
           history.push("/agriculture");
         }
       })
@@ -54,7 +55,7 @@ export default function Ui() {
           localStorage.setItem("email", res.user.email);
           localStorage.setItem("uid", res.user.uid);
           localStorage.setItem("logged", true);
-          // AddData(res.user);
+          AddData(res.user);
           history.push("/agriculture");
         }
       })

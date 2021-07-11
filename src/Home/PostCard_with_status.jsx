@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     marginBottom: "10px",
     backgroundColor: "#F8F8F8",
-    borderRadius:"25px"
+    borderRadius: "25px"
   },
   media: {
     height: 0
@@ -76,6 +76,14 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 5,
     fontSize: "14px",
     color: "#606060"
+  },
+  status_div: {
+    display: "flex",
+    marginLeft: 10
+  },
+  staus: {
+    fontSize: 20,
+    color: "green"
   }
 }));
 
@@ -120,16 +128,8 @@ export default function RecipeReviewCard(props) {
           peas along with the mussels, if you like.
         </Typography>
       </CardContent>
-      <div
-        className={is ? classes.likeClicked : classes.likeNotClicked}
-        onClick={is ? decc : incc}
-      >
-        <ThumbUpIcon
-          className={is ? classes.icon_style2 : classes.icon_style1}
-        />
-        <h4 className={is ? classes.supportClicked : classes.supportNotClicked}>
-          {count} {count > 1 ? "supports" : "support"}
-        </h4>
+      <div className={classes.status_div}>
+        <h4 className={classes.status}>Status: In progress</h4>
       </div>
     </Card>
   );
