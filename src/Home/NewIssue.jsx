@@ -43,7 +43,7 @@ export default function FullScreenDialog() {
 
   return (
     <div>
-      <div style={{ marginLeft: "45%" }} onClick={handleClickOpen}>
+      <div style={{ marginLeft: "40%" }} onClick={handleClickOpen}>
         <div className="add-issue">
           <span style={{ marginRight: "8px" }}> + </span> New issue
         </div>

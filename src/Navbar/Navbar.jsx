@@ -1,9 +1,12 @@
 import React from "react";
 import ExpandMoreIcon from "@material-ui/icons/ArrowDropDown";
 import ExpandLessIcon from "@material-ui/icons/ArrowDropUp";
+import { useHistory } from "react-router-dom";
+import { isOfficer } from "../utils";
 import "./Navbar.css";
 
 export default function Navbar() {
+  const history = useHistory();
   const items = [
     {
       heading: "Departments",
@@ -48,6 +51,31 @@ export default function Navbar() {
         </li>
         <hr />
         <div id="sidebar-container-item-list">
+          <div style={{ marginLeft: "20px", cursor: "pointer" }}>
+            {isOfficer ? (
+              <table>
+                <tr onClick={() => history.push("/issue-of-your-department")}>
+                  <td>
+                    <h3>#</h3>
+                  </td>
+                  <td>
+                    <h3 className="dept-sidebar">Issues of your department</h3>
+                  </td>
+                </tr>
+              </table>
+            ) : (
+              <table>
+                <tr onClick={() => history.push("/my-issues")}>
+                  <td>
+                    <h3>#</h3>
+                  </td>
+                  <td>
+                    <h3 className="dept-sidebar">My Issues</h3>
+                  </td>
+                </tr>
+              </table>
+            )}
+          </div>
           {items.map((item, index) => {
             return (
               <div>
@@ -68,7 +96,7 @@ export default function Navbar() {
                     return (
                       <li id="items">
                         <table>
-                          <tr>
+                          <tr onClick={() => history.push(`/${it}`)}>
                             <td>#</td>
                             <td>
                               <div className="dept-sidebar">{it}</div>

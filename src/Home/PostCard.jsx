@@ -1,26 +1,20 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
-import CardActions from "@material-ui/core/CardActions";
-import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
-    height:"auto",
-    marginBottom:"50px"
+    width: "99.5%",
+    height: "auto",
+    marginBottom: "10px",
+    backgroundColor: "#F8F8F8",
+    borderRadius:"25px"
   },
   media: {
     height: 0
@@ -37,15 +31,68 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     backgroundColor: red[500]
+  },
+  icon_style1: {
+    fontSize: 16,
+    marginLeft: 20,
+    color: "#606060"
+  },
+  icon_style2: {
+    fontSize: 16,
+    marginLeft: 20,
+    color: "#185ADB"
+  },
+  likeNotClicked: {
+    display: "flex",
+    alignItems: "center",
+    marginTop: "5px",
+    marginBottom: "10px",
+    width: "120px",
+    marginLeft: "20px",
+    borderRadius: "10px",
+    paddingTop: "5px",
+    paddingBottom: "5px",
+    cursor: "pointer"
+  },
+  likeClicked: {
+    display: "flex",
+    alignItems: "center",
+    marginTop: "5px",
+    marginBottom: "10px",
+    width: "120px",
+    marginLeft: "20px",
+    borderRadius: "10px",
+    paddingTop: "5px",
+    paddingBottom: "5px",
+    backgroundColor: "#E8E8E8",
+    cursor: "pointer"
+  },
+  supportClicked: {
+    marginLeft: 5,
+    fontSize: "14px",
+    color: "#185ADB"
+  },
+  supportNotClicked: {
+    marginLeft: 5,
+    fontSize: "14px",
+    color: "#606060"
   }
 }));
 
 export default function RecipeReviewCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const [count, setCount] = React.useState(0);
+  const [is, setIs] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const incc = () => {
+    setCount(count + 1);
+    setIs(true);
+  };
+
+  const decc = () => {
+    setCount(count - 1);
+    setIs(false);
   };
 
   return (
@@ -68,12 +115,22 @@ export default function RecipeReviewCard(props) {
         <Typography variant="body2" color="textSecondary" component="p">
           This impressive paella is a perfect party dish and a fun meal to cook
           together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          mussels, if you like. This impressive paella is a perfect party dish
+          and a fun meal to cook together with your guests. Add 1 cup of frozen
+          peas along with the mussels, if you like.
         </Typography>
       </CardContent>
+      <div
+        className={is ? classes.likeClicked : classes.likeNotClicked}
+        onClick={is ? decc : incc}
+      >
+        <ThumbUpIcon
+          className={is ? classes.icon_style2 : classes.icon_style1}
+        />
+        <h4 className={is ? classes.supportClicked : classes.supportNotClicked}>
+          {count} {count > 1 ? "supports" : "support"}
+        </h4>
+      </div>
     </Card>
   );
 }

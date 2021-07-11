@@ -1,7 +1,7 @@
 #home {
   color: black;
   margin-top: 20px;
-  padding-left: 250px;
+  padding-left: 280px;
   height: 100vh;
   /* margin-bottom:200px; */
 }
@@ -23,17 +23,18 @@
   width: 115px;
   cursor: pointer;
   color: white;
-  background-color: #CE1212;
-  opacity:0.5;
+  background-color: #ce1212;
+  opacity: 0.5;
 }
 .hr-home {
   border: 0.5px solid #606060;
   margin-top: 10px;
 }
 .home-container {
-  height: 90%;
-  width: 100%;
+  height: 85%;
+  width: 75%;
   overflow: auto;
+  margin-left:5px;
 }
 .home-container::-webkit-scrollbar {
   width: 10px;
